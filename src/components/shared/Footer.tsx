@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="my-4">
       <MaxWidthWrapper>
-        <div className="flex justify-between">
-          <p className="text-sm">
+        <div className="flex justify-between items-center">
+          <p className="text-gray-400">
             &copy; {new Date().getFullYear()} All Rights Reserved
           </p>
 

@@ -9,7 +9,7 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <nav className="flex justify-between items-center">
           <div>
-            <Link href="/" className="font-bold">
+            <Link href="/" className="font-bold text-white">
               Hippo
             </Link>
           </div>
@@ -17,7 +17,9 @@ const Navbar = () => {
             {user ? (
               <Link href="/dashboard">Dashboard </Link>
             ) : (
-              <Button>Login</Button>
+              <Link href="/login">
+                <Button>Login</Button>
+              </Link>
             )}
           </div>
         </nav>

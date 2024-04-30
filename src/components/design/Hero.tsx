@@ -6,10 +6,10 @@ const Hero = () => {
     <section className="my-10 ">
       <MaxWidthWrapper>
         <div className="flex flex-col text-center space-y-3 w-full">
-          <h1 className="text-3xl md:text-4xl font-bold">
+          <h1 className="text-3xl md:text-4xl font-bold text-white">
             Manage Task with Ease
           </h1>
-          <p>
+          <p className="text-gray-400">
             Keep your team in sync with real-time updates and centralized
             project discussions.
           </p>
