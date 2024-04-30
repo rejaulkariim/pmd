@@ -5,7 +5,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 const Navbar = () => {
   const user = false;
   return (
-    <header className="border-b border-gray-900 h-14 flex items-center">
+    <header className="border-b border-border h-14 flex items-center">
       <MaxWidthWrapper>
         <nav className="flex justify-between items-center">
           <div>
@@ -18,7 +18,15 @@ const Navbar = () => {
               <Link href="/dashboard">Dashboard </Link>
             ) : (
               <Link href="/login">
-                <Button>Login</Button>
+                <Button
+                  style={{
+                    backgroundColor: "transparent",
+                    borderColor: "#191918",
+                    color: "#b5b3ad",
+                  }}
+                >
+                  Login
+                </Button>
               </Link>
             )}
           </div>

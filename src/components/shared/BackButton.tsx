@@ -6,7 +6,14 @@ import { useRouter } from "next/navigation";
 const BackButton = () => {
   const router = useRouter();
   return (
-    <Button type="default" onClick={() => router.back()}>
+    <Button
+      onClick={() => router.back()}
+      style={{
+        backgroundColor: "#111110",
+        borderColor: "#191918",
+        color: "#b5b3ad",
+      }}
+    >
       Back
     </Button>
   );

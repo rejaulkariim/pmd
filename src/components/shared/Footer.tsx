@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="my-4">
       <MaxWidthWrapper>
         <div className="flex justify-between items-center">
-          <p className="text-gray-400">
+          <p className="text-foreground">
             &copy; {new Date().getFullYear()} All Rights Reserved
           </p>
 
           <Link
             href="https://github.com/rejaulkariim/pmd"
             target="_blank"
-            className="bg-gray-800 p-2 rounded-md"
+            className="bg-transparent hover:bg-card p-2 rounded-md"
           >
             <FaGithub />
           </Link>

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className)}>
+      <body className={cn(inter.className, "antialiased")}>
         <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
