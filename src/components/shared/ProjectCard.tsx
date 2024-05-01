@@ -4,7 +4,7 @@ import { HiDotsVertical } from "react-icons/hi";
 import DeleteModal from "../modal/DeleteModal";
 
 interface Props {
-  id: number;
+  id: string;
   name: string;
   description: string;
 }
@@ -27,7 +27,7 @@ const ProjectCard = ({ id, name, description }: Props) => {
   return (
     <div className="border-2 hover:bg-card border-border rounded-lg p-2 shadow-sm transition-all duration-300">
       <div className="flex justify-between items-center">
-        <Link href={`/project/${id}`}>
+        <Link href={`/dashboard/project/${id}`}>
           <h1 className="font-bold">{name}</h1>
           <p className="text-foreground">{description}</p>
         </Link>

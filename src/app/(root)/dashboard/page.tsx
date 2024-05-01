@@ -2,35 +2,9 @@
 
 import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import ProjectCard from "@/components/shared/ProjectCard";
+import { projects } from "@/constants";
 
 const DashboardPage = () => {
-  const projects = [
-    {
-      id: 1,
-      name: "E-commerce Platform",
-      description: "Description of E-commerce Platform",
-    },
-    {
-      id: 2,
-      name: "Social Media App",
-      description: "Description of Social Media App",
-    },
-    {
-      id: 3,
-      name: "Task Management System",
-      description: "Description of Task Management System",
-    },
-    {
-      id: 4,
-      name: "Online Learning Portal",
-      description: "Description of Online Learning Portal",
-    },
-    {
-      id: 5,
-      name: "Finance Tracker Application",
-      description: "Description of Finance Tracker Application",
-    },
-  ];
   return (
     <section className="py-10">
       <MaxWidthWrapper>
