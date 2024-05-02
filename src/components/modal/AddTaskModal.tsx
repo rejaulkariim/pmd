@@ -39,8 +39,19 @@ const AddTaskModal = () => {
       >
         New Task
       </Button>
-      <Modal open={isModalOpen} title="Add new task" footer>
-        <p className="text-foreground">What do you want to get done today?</p>
+      <Modal
+        open={isModalOpen}
+        footer
+        styles={{
+          content: { backgroundColor: "#191918" },
+          header: { backgroundColor: "#191918", color: "white" },
+          footer: { backgroundColor: "#191918" },
+        }}
+      >
+        <div className="pb-4">
+          <h1 className="font-bold text-white">Add New Task</h1>
+          <p className="text-foreground">What do you want to get done today?</p>
+        </div>
 
         <Form onFinish={onFinish} autoComplete="off" layout="vertical">
           <Form.Item<FieldType>
@@ -89,6 +100,9 @@ const AddTaskModal = () => {
           >
             <Select
               defaultValue="Assign Team Member"
+              style={{
+                backgroundColor: "#191918",
+              }}
               options={[
                 { value: "rejaul", label: "Rejaul" },
                 { value: "mir hossain", label: "Mir Hossain" },

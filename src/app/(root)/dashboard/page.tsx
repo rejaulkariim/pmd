@@ -3,13 +3,20 @@
 import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import ProjectCard from "@/components/shared/ProjectCard";
 import { useProducts } from "@/hooks/useFetchData";
+import { Skeleton } from "antd";
 
 const DashboardPage = () => {
   const { projects, isLoading } = useProducts();
 
-  console.log(projects, "data fromr react query");
-
-  if (isLoading) return <MaxWidthWrapper>Loading...</MaxWidthWrapper>;
+  if (isLoading)
+    return (
+      <section className="py-10">
+        <MaxWidthWrapper className="max-w-3xl">
+          <h1 className="font-bold">Projects Overview</h1>
+          <Skeleton paragraph={{ rows: 4 }} />
+        </MaxWidthWrapper>
+      </section>
+    );
 
   return (
     <section className="py-10">

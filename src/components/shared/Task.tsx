@@ -24,11 +24,7 @@ const Task = ({
   const items: any["items"] = [
     {
       key: "1",
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="">
-          Edit
-        </a>
-      ),
+      label: "Edit",
     },
     {
       key: "2",

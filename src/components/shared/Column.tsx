@@ -24,7 +24,7 @@ const Column = ({ title, status }: { title: string; status: Status }) => {
   }, []);
 
   return (
-    <section className="h-[400px] flex-1">
+    <section className="h-[400px] pt-10">
       <h1 className="font-bold mt-4">{title}</h1>
 
       <div

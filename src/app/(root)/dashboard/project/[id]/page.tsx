@@ -42,7 +42,7 @@ const ProjectDetailsPage = ({ params }: Props) => {
             <AddTaskModal />
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Column title="Todo" status="TODO" />
             <Column title="In Progress" status="IN_PROGRESS" />
             <Column title="Done" status="DONE" />
@@ -55,7 +55,7 @@ const ProjectDetailsPage = ({ params }: Props) => {
 
             <Select
               onChange={handleChange}
-              defaultValue="Filter By Status"
+              defaultValue="Todo"
               options={[
                 { value: "TODO", label: "Todo" },
                 { value: "IN_PROGRESS", label: "In Progress" },
@@ -64,9 +64,9 @@ const ProjectDetailsPage = ({ params }: Props) => {
             />
           </div>
 
-          {filterByStatus ? (
+          {filteredTasks.length > 0 ? (
             <div className="flex flex-col gap-4">
-              {filteredTasks?.map((task) => (
+              {filteredTasks.map((task) => (
                 <div
                   key={task.id}
                   className={cn("rounded-lg p-4 w-full", {
@@ -97,7 +97,7 @@ const ProjectDetailsPage = ({ params }: Props) => {
               ))}
             </div>
           ) : (
-            <p>No result found</p>
+            <p className="text-red-500">No activities found</p>
           )}
         </div>
       </MaxWidthWrapper>
