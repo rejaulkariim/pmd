@@ -30,15 +30,6 @@ const DeleteModal = ({ id }: { id: string }) => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
-        styles={{
-          content: { backgroundColor: "#0E0E0C", border: "#b5b3ad" },
-          header: {
-            backgroundColor: "#0E0E0C",
-            color: "red",
-          },
-          body: { color: "white" },
-          mask: { backgroundClip: "#0E0E0C" },
-        }}
       >
         <p className="text-foreground">
           Once you delete a project this action can not be undone!

@@ -7,7 +7,6 @@ import Task from "./Task";
 const Column = ({ title, status }: { title: string; status: Status }) => {
   const tasks = useTaskStore((state) => state.tasks);
 
-  console.log(tasks, "tasks");
   const filteredTasks = tasks.filter((task) => task.status === status);
 
   const updateTask = useTaskStore((state) => state.updateTask);
