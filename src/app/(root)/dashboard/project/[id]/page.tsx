@@ -1,8 +1,8 @@
+import AddTaskModal from "@/components/modal/AddTaskModal";
 import BackButton from "@/components/shared/BackButton";
+import Column from "@/components/shared/Column";
 import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import { projects } from "@/constants";
-import { formatTimestamp } from "@/lib/utils";
-import { Button } from "antd";
 
 interface Props {
   params: {
@@ -12,7 +12,7 @@ interface Props {
 
 const ProjectDetailsPage = ({ params }: Props) => {
   const result = projects.find((project) => project.id === params.id);
-  console.log(result);
+
   return (
     <section className="py-10">
       <MaxWidthWrapper>
@@ -23,32 +23,20 @@ const ProjectDetailsPage = ({ params }: Props) => {
           <p className="text-foreground">{result?.description}</p>
         </div>
 
-        <div className="my-4">
-          <div className="flex gap-4 items-center">
-            <h1 className="font-bold">Tasks</h1>
-            <Button
-              style={{
-                backgroundColor: "transparent",
-                borderColor: "#191918",
-                color: "#b5b3ad",
-              }}
-            >
-              New Task
-            </Button>
+        <div className="my-10">
+          <div className="flex justify-between items-center">
+            <h1 className="font-bold">Manage Task</h1>
+            <AddTaskModal />
           </div>
-          <div className="flex flex-wrap items-center gap-4">
-            {result?.tasks.map((task) => (
-              <div key={task.id} className="my-4">
-                <p className="text-sm font-semibold ">{task.title}</p>
-                <span className="text-xs text-foreground border px-3 py-0.5 rounded-xl border-border">
-                  {task.status}
-                </span>
-              </div>
-            ))}
+
+          <div className="flex items-center gap-10">
+            <Column title="Todo" status="TODO" />
+            <Column title="In Progress" status="IN_PROGRESS" />
+            <Column title="Done" status="DONE" />
           </div>
         </div>
 
-        <div className="my-4">
+        {/* <div className="my-4">
           <h1 className="font-bold">Team Member</h1>
           <div className="flex items-center gap-3">
             {result?.teamMembers.map((member) => (
@@ -60,8 +48,8 @@ const ProjectDetailsPage = ({ params }: Props) => {
               </div>
             ))}
           </div>
-        </div>
-
+        </div> */}
+        {/* 
         <div>
           <h1 className="font-bold">Recent Activities</h1>
           {result?.recentActivities.map((member) => (
@@ -72,7 +60,7 @@ const ProjectDetailsPage = ({ params }: Props) => {
               </span>
             </div>
           ))}
-        </div>
+        </div> */}
       </MaxWidthWrapper>
     </section>
   );

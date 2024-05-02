@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const formatTimestamp = (timestamp: string) => {
+export const formatTimestamp = (timestamp: Date) => {
   const date = new Date(timestamp);
   const options: any = {
     year: "numeric",

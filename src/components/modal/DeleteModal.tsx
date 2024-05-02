@@ -28,7 +28,9 @@ const DeleteModal = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p className="text-foreground">Once you delete a project this action can not be undone!</p>
+        <p className="text-foreground">
+          Once you delete a project this action can not be undone!
+        </p>
       </Modal>
     </>
   );
