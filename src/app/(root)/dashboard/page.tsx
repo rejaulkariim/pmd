@@ -2,9 +2,15 @@
 
 import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import ProjectCard from "@/components/shared/ProjectCard";
-import { projects } from "@/constants";
+import { useProducts } from "@/hooks/useFetchData";
 
 const DashboardPage = () => {
+  const { projects, isLoading } = useProducts();
+
+  console.log(projects, "data fromr react query");
+
+  if (isLoading) return <MaxWidthWrapper>Loading...</MaxWidthWrapper>;
+
   return (
     <section className="py-10">
       <MaxWidthWrapper>

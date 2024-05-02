@@ -1,5 +1,8 @@
 import { useTaskStore } from "@/lib/store";
 import { cn, formatTimestamp } from "@/lib/utils";
+import { Dropdown } from "antd";
+import { HiDotsVertical } from "react-icons/hi";
+import DeleteModal from "../modal/DeleteModal";
 
 const Task = ({
   id,
@@ -18,6 +21,21 @@ const Task = ({
 }) => {
   const dragTask = useTaskStore((state) => state.dragTask);
   const removeTask = useTaskStore((state) => state.removeTask);
+
+  const items: any["items"] = [
+    {
+      key: "1",
+      label: (
+        <a target="_blank" rel="noopener noreferrer" href="">
+          Edit
+        </a>
+      ),
+    },
+    {
+      key: "2",
+      label: <DeleteModal id={id} />,
+    },
+  ];
 
   return (
     <>
@@ -38,7 +56,7 @@ const Task = ({
             <h3 className="font-semibold">{title}</h3>
             <p className="text-sm text-foreground">{description}</p>
           </div>
-          <button className="cursor-pointer" onClick={() => removeTask(id)}>
+          {/* <button className="cursor-pointer" onClick={() => removeTask(id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -51,7 +69,16 @@ const Task = ({
                 clipRule="evenodd"
               />
             </svg>
-          </button>
+          </button> */}
+
+          <Dropdown
+            menu={{ items }}
+            placement="bottom"
+            arrow
+            className="cursor-pointer"
+          >
+            <HiDotsVertical />
+          </Dropdown>
         </div>
 
         <div className="flex flex-col">

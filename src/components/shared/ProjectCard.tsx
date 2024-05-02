@@ -21,7 +21,7 @@ const ProjectCard = ({ id, name, description }: Props) => {
     },
     {
       key: "2",
-      label: <DeleteModal />,
+      label: <DeleteModal id={id} />,
     },
   ];
   return (

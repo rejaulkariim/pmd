@@ -1,3 +1,4 @@
+import QueryProvider from "@/lib/QueryProvider";
 import { cn } from "@/lib/utils";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import type { Metadata } from "next";
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, "antialiased")}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <QueryProvider>
+          <AntdRegistry>{children}</AntdRegistry>
+        </QueryProvider>
       </body>
     </html>
   );

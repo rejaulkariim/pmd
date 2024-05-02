@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Button,
-  DatePicker,
-  DatePickerProps,
-  FormProps,
-  Modal,
-  Select,
-} from "antd";
+import { Button, DatePicker, FormProps, Modal, Select } from "antd";
 import { useState } from "react";
 
 import { useTaskStore } from "@/lib/store";
@@ -24,26 +17,14 @@ const AddTaskModal = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
-  };
-
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-    console.log(values);
     const { title, description, deadlines, teamMember } = values;
     addTask(title, description, deadlines, teamMember);
+    setIsModalOpen(false);
   };
 
   const showModal = () => {
     setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
   };
 
   return (
@@ -58,17 +39,7 @@ const AddTaskModal = () => {
       >
         New Task
       </Button>
-      <Modal
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        title="Add new task"
-        style={{
-          backgroundColor: "#111110",
-          borderColor: "#191918",
-          color: "#b5b3ad",
-        }}
-      >
+      <Modal open={isModalOpen} title="Add new task" footer>
         <p className="text-foreground">What do you want to get done today?</p>
 
         <Form onFinish={onFinish} autoComplete="off" layout="vertical">
@@ -108,18 +79,16 @@ const AddTaskModal = () => {
               { required: true, message: "Please input your deadlines!" },
             ]}
           >
-            <DatePicker onChange={onChange} />
+            <DatePicker />
           </Form.Item>
 
           <Form.Item<FieldType>
             label={<span style={{ color: "#b5b3ad" }}>Assign Member</span>}
             name="teamMember"
-            rules={[
-              { required: true, message: "Please input your deadlines!" },
-            ]}
+            rules={[{ required: true, message: "Please assign Team Member!" }]}
           >
             <Select
-              defaultValue="Rejaul"
+              defaultValue="Assign Team Member"
               options={[
                 { value: "rejaul", label: "Rejaul" },
                 { value: "mir hossain", label: "Mir Hossain" },

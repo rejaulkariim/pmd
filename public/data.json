@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "An E-Commerce Application",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "status": "In Progress",
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Task 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "title": "Task 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "status": "Completed"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Project B",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "status": "Completed",
+    "tasks": [
+      {
+        "id": 3,
+        "title": "Task 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "status": "Pending"
+      },
+      {
+        "id": 4,
+        "title": "Task 4",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "status": "In Progress"
+      }
+    ]
+  }
+]
